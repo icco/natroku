@@ -9,10 +9,10 @@ module Natroku
     end
 
     def self.parse text_spec
-      matchdata = text_spec.match /(\w+)\/(\w+)(\@(\w+))?/
+      matchdata = text_spec.match /([\w\-\.]+)\/([\w\-\.]+)(\@([\w\-\.]+))?/
       user = matchdata[1]
       project = matchdata[2]
-      ref = matchdata[3] || "HEAD"
+      ref = matchdata[4] || "HEAD"
 
       return Spec.new user, project, ref
     end
