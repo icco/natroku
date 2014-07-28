@@ -1,5 +1,7 @@
+require "thor"
+
 require "natroku/version"
+require "natroku/cli"
 
 module Natroku
-  # Your code goes here...
 end

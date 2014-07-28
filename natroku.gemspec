@@ -16,7 +16,7 @@ Natroku, is what I like to call "dumb people hosting". Not because because it is
   spec.license       = "GPLv3"
 
   spec.files         = `git ls-files -z`.split("\x0")
-  spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
+  spec.executables   = ["natroku"]
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
 
