@@ -2,6 +2,8 @@
 
 Natroku, is what I like to call "dumb people hosting". Not because because it is stupid simple or because you'd have to be dumb to use it. But rather it is a hosting tool that explicitly throws away most of the common sense behind good hosting. There is no replication. There are no backups. There is no monitoring.
 
+[![Build Status](https://travis-ci.org/icco/natruko.svg?branch=master)](https://travis-ci.org/icco/natruko)
+
 ## Installation
 
     $ gem install natroku
