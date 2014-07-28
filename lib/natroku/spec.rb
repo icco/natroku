@@ -8,6 +8,10 @@ module Natroku
       @ref = ref
     end
 
+    def valid_cloud_name
+      "#{spec.user}-#{spec.project}-#{spec.ref}-#{Time.now.to_i}"
+    end
+
     def self.parse text_spec
       matchdata = text_spec.match /([\w\-\.]+)\/([\w\-\.]+)(\@([\w\-\.]+))?/
       user = matchdata[1]
