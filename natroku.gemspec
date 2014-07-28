@@ -20,6 +20,7 @@ Natroku, is what I like to call "dumb people hosting". Not because because it is
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
 
+  spec.add_dependency "fog"
   spec.add_dependency "thor"
 
   spec.add_development_dependency "bundler", "~> 1.5"
