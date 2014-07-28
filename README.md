@@ -10,15 +10,15 @@ Natroku, is what I like to call "dumb people hosting". Not because because it is
 
 Boot a new server based on a github project
 
- > `$ natroku icco/sadnat.com start`
+    $ natroku icco/sadnat.com start
 
 Destroy a running server
 
- > `$ natroku icco/sadnat.com stop`
+    $ natroku icco/sadnat.com stop
 
 Restart (create a new one and destroy old one)
 
- > `$ natroku icco/sadnat.com restart`
+    $ natroku icco/sadnat.com restart
 
 Projects must have the following specs: `user/project` and by default have `@HEAD` appended to them. You can use any normal git commit reference to deploy from a different point in history.
 
