@@ -3,7 +3,10 @@ module Natroku
     include Thor::Actions
 
     desc "start user/repo", "Start a server based on a location spec"
-    def start spec
+    def start text_spec
+      spec = Spec.parse text_spec
+      server = Cloud::Server.new spec
+      server.start!
     end
 
     desc "restart user/repo", "Restart a server based on a location spec"

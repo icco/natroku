@@ -12,7 +12,7 @@ module Natroku
           @commands.push "DEBIAN_FRONTEND=noninteractive aptitude -y install #{package_list.join ' '}"
         end
 
-        if !hostname.empty?
+        if !hostname.nil? and !hostname.empty?
           @commands.push "echo '#{hostname}' > /etc/hostname && invoke-rc.d hostname.sh start"
         end
 

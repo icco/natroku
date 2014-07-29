@@ -1,15 +1,24 @@
 module Natroku
   module Cloud
     class Server
+      attr_accessor :spec, :connection
+
       def initialize spec, env = {}
+        @hostname = nil
+        @users = [ENV['USER']]
+        @spec = spec
+
         if !spec.is_a Natroku::Spec
           raise "Spec must be a valid Spec."
         end
 
-        package_list = File.readlines('packages.txt').map {|l| l.strip }
-        script = StartupScript.new(HOSTNAME, package_list, USERS).to_s
+        self.connection = Fog::Compute.new({ :provider => "Google" })
+      end
 
-        connection = Fog::Compute.new({ :provider => "Google" })
+      def start!
+        package_list = File.readlines('packages.txt').map {|l| l.strip }
+        script = StartupScript.new(@hostname, package_list, @users).to_s
+
         name = spec.valid_cloud_name
 
         disk = connection.disks.create({
@@ -28,13 +37,14 @@ module Natroku
           :zone_name => Natroku::Cloud::ZONE,
           :private_key_path => File.expand_path("~/.ssh/id_rsa"),
           :public_key_path => File.expand_path("~/.ssh/id_rsa.pub"),
-          :user => ENV['USER'],
+          :user => @users[0],
           :tags => ["fog", "natroku"],
           :metadata => {
             # https://developers.google.com/compute/docs/howtos/startupscript#example
             'startup-script' => script,
           },
         })
+
         server.wait_for? { ready? }
 
         return server

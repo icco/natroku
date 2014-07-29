@@ -1,4 +1,5 @@
 require 'cloud/server'
+require 'cloud/startup_script'
 
 module Natroku
   module Cloud
