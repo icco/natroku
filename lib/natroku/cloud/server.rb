@@ -24,17 +24,17 @@ module Natroku
         disk = connection.disks.create({
           :name => name,
           :size_gb => 10,
-          :zone_name => Natroku::Cloud::ZONE,
-          :source_image => Natroku::Cloud::BASE_IMAGE,
+          :zone_name => Cloud::ZONE,
+          :source_image => Cloud::BASE_IMAGE,
         })
 
         disk.wait_for { disk.ready? }
 
-        server = connection.servers.bootstrap{
+        server = connection.servers.bootstrap({
           :name => name,
           :disks => [ disk.get_as_boot_disk(true), ],
-          :machine_type => Natroku::Cloud::MACHINE_TYPE,
-          :zone_name => Natroku::Cloud::ZONE,
+          :machine_type => Cloud::MACHINE_TYPE,
+          :zone_name => Cloud::ZONE,
           :private_key_path => File.expand_path("~/.ssh/id_rsa"),
           :public_key_path => File.expand_path("~/.ssh/id_rsa.pub"),
           :user => @users[0],

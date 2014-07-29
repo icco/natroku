@@ -1,5 +1,5 @@
-require 'cloud/server'
-require 'cloud/startup_script'
+require 'natroku/cloud/server'
+require 'natroku/cloud/startup_script'
 
 module Natroku
   module Cloud
