@@ -24,6 +24,10 @@ Restart (create a new one and destroy old one)
 
 Projects must have the following specs: `user/project` and by default have `@HEAD` appended to them. You can use any normal git commit reference to deploy from a different point in history.
 
+## How it works
+
+natroku follows a pretty simple series of steps.
+
 ## Contributing
 
  1. Fork it ( http://github.com/icco/natroku/fork )
