@@ -2,6 +2,8 @@
 
 "Container management for the unemployed".
 
+*NOTE*: As of 2015-03-29, this does not work and is just a theory. Hit me up if you have questions about development or helping out (or just send a pull request or file issues).
+
 ## Design
 
 natroku is actually three pieces of software (router, configd, dbc), each contained in a subdirectory of this repo. The idea is this system could run all on a single host, or spread out across many.
