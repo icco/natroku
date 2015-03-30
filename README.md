@@ -19,3 +19,11 @@ A polling server that uses Git as a database. It looks at all of the containers 
 ### Database Controller (dbc)
 
 This acts like the router, but instead acts on database requests, specifically postgresql connections.
+
+## Alternatives
+
+This is a heavily evolving area, I pulled a lot of this from [Stack Overflow](http://stackoverflow.com/questions/18285212/how-to-scale-docker-containers-in-production/18287169#18287169) and a [random mindmap](https://www.mindmeister.com/389671722/docker-ecosystem).
+
+So if you look at a lot of the solutions, like [Mesos](https://mesos.apache.org/), [Kubernetes](http://kubernetes.io/), [Decking](http://decking.io/), [Helios](https://github.com/spotify/helios), [Flynn](https://flynn.io/), [Lattice](http://lattice.cf/index.html), [CoreOS](https://coreos.com/) and [Deis](http://deis.io/), they all require a ton of resources.
+
+Below I'm going to try and break down the features and minimum footprint needed for each.
