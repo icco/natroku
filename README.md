@@ -2,7 +2,7 @@
 
 "Container management for the unemployed".
 
-*NOTE*: As of 2015-03-29, this does not work and is just a theory. Hit me up if you have questions about development or helping out (or just send a pull request or file issues).
+**NOTE**: As of 2015-03-29, this does not work and is just a theory. Hit me up if you have questions about development or helping out (or just send a pull request or file issues).
 
 ## Design
 
